@@ -1,7 +1,6 @@
 FROM ubuntu:14.04
 LABEL Maintainter="WarrensBox"
 
-
 RUN apt-get update \
 &&  apt-get upgrade -y --force-yes \
 &&  apt-get install -y --force-yes \
@@ -55,7 +54,6 @@ RUN tar zxf go${GOVERSION}.linux-amd64.tar.gz -C /opt && rm go${GOVERSION}.linux
 RUN ln -s /opt/go/bin/go /usr/local/bin
 
 RUN ln -s /usr/bin/python3 /usr/local/bin/python
-
 
 RUN adduser --disabled-password --gecos '' warrensbox  
 
