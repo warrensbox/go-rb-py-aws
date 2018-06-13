@@ -29,6 +29,5 @@ RUN ln -s /opt/go/bin/go /usr/local/bin
 RUN adduser --disabled-password --gecos '' warrensbox  
 
 RUN usermod -aG sudo warrensbox
-RUN chown warrensbox:warrensbox /usr/local/rbenv/versions/2.5.1/lib/ruby/gems/2.5.0
 USER warrensbox
 WORKDIR /home/warrensbox
