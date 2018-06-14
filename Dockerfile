@@ -45,14 +45,6 @@ RUN eval "$(rbenv init -)"; rbenv install $RBENV_VERSION \
 &&  eval "$(rbenv init -)"; gem install jekyll -f \
 &&  rm -rf /tmp/*
 
-ENV GOVERSION 1.10.3
-ENV GOROOT /opt/go
-ENV GOPATH /home/warrensbox
-
-RUN wget https://storage.googleapis.com/golang/go${GOVERSION}.linux-amd64.tar.gz 
-RUN tar zxf go${GOVERSION}.linux-amd64.tar.gz -C /opt && rm go${GOVERSION}.linux-amd64.tar.gz 
-RUN ln -s /opt/go/bin/go /usr/local/bin
-
 RUN ln -s /usr/bin/python3 /usr/local/bin/python
 
 RUN adduser --disabled-password --gecos '' warrensbox  
