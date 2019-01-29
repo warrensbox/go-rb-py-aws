@@ -45,7 +45,7 @@ RUN eval "$(rbenv init -)"; rbenv install $RBENV_VERSION \
 &&  eval "$(rbenv init -)"; gem install jekyll -f \
 &&  rm -rf /tmp/*
 
-ENV GOVERSION 1.10.3
+ENV GOVERSION 1.11.2
 ENV GOROOT /opt/go
 ENV GOPATH /home/warrensbox
 
