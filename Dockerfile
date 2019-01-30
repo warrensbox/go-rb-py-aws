@@ -53,6 +53,10 @@ RUN wget https://storage.googleapis.com/golang/go${GOVERSION}.linux-amd64.tar.gz
 RUN tar zxf go${GOVERSION}.linux-amd64.tar.gz -C /opt && rm go${GOVERSION}.linux-amd64.tar.gz 
 RUN ln -s /opt/go/bin/go /usr/local/bin
 
+RUN mkdir -p /home/warrensbox/bin
+RUN curl https://raw.githubusercontent.com/golang/dep/master/install.sh | sh
+ENV PATH="/home/warrensbox/bin:${PATH}"
+
 RUN ln -s /usr/bin/python3 /usr/local/bin/python
 
 RUN adduser --disabled-password --gecos '' warrensbox  
