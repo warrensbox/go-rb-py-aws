@@ -53,9 +53,7 @@ RUN wget https://storage.googleapis.com/golang/go${GOVERSION}.linux-amd64.tar.gz
 RUN tar zxf go${GOVERSION}.linux-amd64.tar.gz -C /opt && rm go${GOVERSION}.linux-amd64.tar.gz 
 RUN ln -s /opt/go/bin/go /usr/local/bin
 
-RUN mkdir -p /home/warrensbox/bin
-RUN curl https://raw.githubusercontent.com/golang/dep/master/install.sh | sh
-ENV PATH="/home/warrensbox/bin:${PATH}"
+
 
 RUN ln -s /usr/bin/python3 /usr/local/bin/python
 
@@ -70,5 +68,4 @@ ENV PATH="/home/warrensbox/.local/bin:${PATH}"
 RUN wget https://bootstrap.pypa.io/get-pip.py 
 RUN python get-pip.py --user
 RUN pip install awscli --upgrade --user
-
 
