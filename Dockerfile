@@ -1,5 +1,5 @@
 FROM ubuntu:14.04
-LABEL Maintainter="WarrensBox"
+LABEL Maintainter="https://github.com/warrensbox/go-rb-py-aws/issues/new"
 
 RUN apt-get update \
 &&  apt-get upgrade -y --force-yes \
