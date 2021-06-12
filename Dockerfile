@@ -1,5 +1,5 @@
 FROM ubuntu:14.04
-LABEL Maintainter="support@warrensbox.com"
+LABEL Maintainter="https://github.com/warrensbox/go-rb-py-aws/issues/new"
 
 RUN apt-get update \
 &&  apt-get upgrade -y --force-yes \
@@ -45,13 +45,15 @@ RUN eval "$(rbenv init -)"; rbenv install $RBENV_VERSION \
 &&  eval "$(rbenv init -)"; gem install jekyll -f \
 &&  rm -rf /tmp/*
 
-ENV GOVERSION 1.10.3
+ENV GOVERSION 1.16.5
 ENV GOROOT /opt/go
 ENV GOPATH /home/warrensbox
 
 RUN wget https://storage.googleapis.com/golang/go${GOVERSION}.linux-amd64.tar.gz 
 RUN tar zxf go${GOVERSION}.linux-amd64.tar.gz -C /opt && rm go${GOVERSION}.linux-amd64.tar.gz 
 RUN ln -s /opt/go/bin/go /usr/local/bin
+
+
 
 RUN ln -s /usr/bin/python3 /usr/local/bin/python
 
@@ -66,5 +68,4 @@ ENV PATH="/home/warrensbox/.local/bin:${PATH}"
 RUN wget https://bootstrap.pypa.io/get-pip.py 
 RUN python get-pip.py --user
 RUN pip install awscli --upgrade --user
-
 
