@@ -1,5 +1,5 @@
 FROM ubuntu:14.04
-LABEL Maintainter="WarrensBox"
+LABEL Maintainter="support@warrensbox.com"
 
 RUN apt-get update \
 &&  apt-get upgrade -y --force-yes \
